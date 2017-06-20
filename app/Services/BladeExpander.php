@@ -139,21 +139,21 @@ class BladeExpander extends BladeCompiler
 
         if (isset($this->sections[$section])) {
             switch ($action) {
-            case static::SECTION_EXTEND:
-                $this->sections[$section] = str_replace('@parent', $this->sections[$section], $this->currentBuffer);
-                break;
+                case static::SECTION_EXTEND:
+                    $this->sections[$section] = str_replace('@parent', $this->sections[$section], $this->currentBuffer);
+                    break;
 
-            case static::SECTION_OVERWRITE:
-                $this->sections[$section] = $this->currentBuffer;
-                break;
+                case static::SECTION_OVERWRITE:
+                    $this->sections[$section] = $this->currentBuffer;
+                    break;
 
-            case static::SECTION_PREPEND:
-                $this->sections[$section] = $this->currentBuffer.PHP_EOL.$this->sections[$section];
-                break;
+                case static::SECTION_PREPEND:
+                    $this->sections[$section] = $this->currentBuffer.PHP_EOL.$this->sections[$section];
+                    break;
 
-            case static::SECTION_APPEND:
-                $this->sections[$section] = $this->sections[$section].PHP_EOL.$this->currentBuffer;
-                break;
+                case static::SECTION_APPEND:
+                    $this->sections[$section] = $this->sections[$section].PHP_EOL.$this->currentBuffer;
+                    break;
             }
         } else {
             // always create new section.
@@ -190,13 +190,13 @@ class BladeExpander extends BladeCompiler
             list($type, $value) = $block;
 
             switch ($type) {
-            case static::BLOCK_CONTENT:
-                $result .= $value;
-                break;
+                case static::BLOCK_CONTENT:
+                    $result .= $value;
+                    break;
 
-            case static::BLOCK_SECTION:
-                $result .= array_get($this->sections, $value);
-                break;
+                case static::BLOCK_SECTION:
+                    $result .= array_get($this->sections, $value);
+                    break;
             }
         }
 
@@ -274,9 +274,7 @@ class BladeExpander extends BladeCompiler
 
                 $this->doInclude($view, $data);
             }
-        }
-
-        // If there is no data in the array, we will render the contents of the empty
+        } // If there is no data in the array, we will render the contents of the empty
         // view. Alternatively, the "empty view" could be a raw string that begins
         // with "raw|" for convenience and to let this know that it is a string.
         else {

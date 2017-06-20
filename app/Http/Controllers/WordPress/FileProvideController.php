@@ -63,15 +63,15 @@ class FileProvideController extends Controller
     private function getMimeType($path, $extension)
     {
         switch ($extension) {
-        case 'css':
-            return 'text/css';
-        case 'js':
-            return 'application/javascript';
-        case 'svg':
-            return 'image/svg+xml';
+            case 'css':
+                return 'text/css';
+            case 'js':
+                return 'application/javascript';
+            case 'svg':
+                return 'image/svg+xml';
 
-        default:
-            return app('files')->mimeType($path);
+            default:
+                return app('files')->mimeType($path);
         }
     }
 

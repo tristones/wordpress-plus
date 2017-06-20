@@ -55,8 +55,7 @@ class Handler extends ExceptionHandler
             if (starts_with($request->path(), config('wordpress.url.backend_prefix'))) {
                 return $this->showBugReportForm($e);
             }
-        }
-        // other
+        } // other
         else {
             return $this->showBugReportForm($e);
         }
