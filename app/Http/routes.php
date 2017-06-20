@@ -11,4 +11,6 @@
 |
 */
 
-require __DIR__.'/wp-routes.php';
+Route::get('/', function () {
+    return view('welcome');
+});

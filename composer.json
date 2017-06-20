@@ -1,17 +1,21 @@
 {
     "name": "laravel-plus/wordpress",
     "description": "Wordpress meets Laravel 5.",
-    "keywords": ["framework", "laravel", "lumen", "wordpress"],
+    "keywords": [
+        "framework",
+        "laravel",
+        "lumen",
+        "wordpress"
+    ],
     "license": "MIT",
     "type": "project",
     "require": {
         "php": ">=5.6",
-        "laravel/lumen-framework": "5.1.*",
-        "vlucas/phpdotenv": "^1.0",
         "league/flysystem": "^1.0",
         "jumilla/laravel-versionia": "^1.0",
         "barryvdh/laravel-debugbar": "^2.0",
-        "erusev/parsedown": "^1.6"
+        "erusev/parsedown": "^1.6",
+        "laravel/framework": "5.1.*"
     },
     "require-dev": {
         "fabpot/php-cs-fixer": "^1.8",

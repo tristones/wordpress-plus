@@ -125,20 +125,20 @@ trait WordPressService
             $theme = WordPress::activeTheme();
             $theme_path = WordPress::themePath($theme);
 
-            if (!file_exists($theme_path.'/style.css')) {
-                info("Error: Theme '$theme' is not found.");
+        if (!file_exists($theme_path.'/style.css')) {
+            info("Error: Theme '$theme' is not found.");
 
-                return;
-            }
+            return;
+        }
 
             $theme_data = get_file_data($theme_path.'/style.css', [
                 'php_autoload_dir' => 'PHP Autoload',
                 'php_namespace' => 'PHP Namespace',
             ]);
 
-            if (array_get($theme_data, 'php_autoload_dir')) {
-                ContentClassLoader::addNamespace($theme_path.'/'.array_get($theme_data, 'php_autoload_dir', 'classes'), $theme_data['php_namespace']);
-            }
+        if (array_get($theme_data, 'php_autoload_dir')) {
+            ContentClassLoader::addNamespace($theme_path.'/'.array_get($theme_data, 'php_autoload_dir', 'classes'), $theme_data['php_namespace']);
+        }
         }
     }
 

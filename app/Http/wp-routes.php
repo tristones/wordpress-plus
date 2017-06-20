@@ -51,13 +51,19 @@ $app->group(['prefix' => $wp_backend_prefix, 'namespace' => $wp_namespace], func
 
     // WordPress+ original routing
     if (config('wordpress.url.backend') != config('wordpress.url.site')) {
-        $app->get('', function () use ($admin_url) { return redirect()->to($admin_url); });
+        $app->get('', function () use ($admin_url) {
+            return redirect()->to($admin_url);
+        });
     }
 
     // MEMO from wp_redirect_admin_locations() on 'wp-includes/canonical.php'
     $app->get('login', 'GateController@login');
-    $app->get('admin', function () use ($admin_url) { return redirect()->to($admin_url); });
-    $app->get('dashboard', function () use ($admin_url) { return redirect()->to($admin_url); });
+    $app->get('admin', function () use ($admin_url) {
+        return redirect()->to($admin_url);
+    });
+    $app->get('dashboard', function () use ($admin_url) {
+        return redirect()->to($admin_url);
+    });
 });
 
 // /wp-admin/network

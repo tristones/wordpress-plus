@@ -23,13 +23,13 @@ class PHP7ServiceProvider extends ServiceProvider
     {
         // Clear Lumen's error handler
         // MEMO Need for PHP7
-        set_error_handler(function () {});
+        set_error_handler(function () {
+        });
 
         $this->frameworkUncaughtExceptionHandler = set_exception_handler(function ($e) {
             if ($e instanceof \Exception) {
                 call_user_func($this->frameworkUncaughtExceptionHandler, $e);
-            }
-            // PHP7
+            } // PHP7
             else {
                 $logger = app('Psr\Log\LoggerInterface');
                 $logger->error($e->getMessage(), [$e]);

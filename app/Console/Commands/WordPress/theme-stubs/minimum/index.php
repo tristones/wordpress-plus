@@ -1,1 +1,1 @@
-<?php echo e('This is index.php'); ?>
+<?php echo e('This is index.php');

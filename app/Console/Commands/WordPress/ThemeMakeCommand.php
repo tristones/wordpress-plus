@@ -96,7 +96,9 @@ class ThemeMakeCommand extends AbstractMakeCommand
         $metadata['author_uri'] = trim($this->ask('Author URI', ' '));
         $metadata['license'] = trim($this->ask('License', ' '));
         $metadata['license_uri'] = trim($this->ask('License URI', ' '));
-        $metadata['tags'] = implode(', ', array_map(function ($value) { return trim($value); }, explode(',', $this->ask('Tags', ' '))));
+        $metadata['tags'] = implode(', ', array_map(function ($value) {
+            return trim($value);
+        }, explode(',', $this->ask('Tags', ' '))));
         $metadata['php_autoload_dir'] = trim($this->ask('PHP autoload directory', 'classes'));
         $metadata['php_namespace'] = trim($this->ask('PHP namespace', ' '));
 
